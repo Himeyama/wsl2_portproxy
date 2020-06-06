@@ -1,4 +1,4 @@
-$dir = "${env:HOMEPATH}\AppData\Local\wsl2_portproxy"
+$dir = "${env:systemdrive}${env:HOMEPATH}\AppData\Local\wsl2_portproxy"
 $path = [Environment]::GetEnvironmentVariable("PATH", "User")
 $path += ";$dir"
 [Environment]::SetEnvironmentVariable("PATH", $path, "User")
