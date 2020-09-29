@@ -16,6 +16,12 @@ WSL2 は毎回 IP アドレスを変更する仕様なので、起動時に IP �
 
 ![](screenshot.png)
 
-### 補足
+## 補足1
 PowerShell を管理者権限で開くには、画面左下の Windows マークを右クリックし、
 Windows PowerShell (管理者) をクリックして開くことができる。
+
+## 補足2
+ポリシーが何とかで動かないときは以下を実行。
+```ps1
+Set-ExecutionPolicy Unrestricted
+```
