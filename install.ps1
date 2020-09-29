@@ -1,6 +1,10 @@
 $dir = "${env:systemdrive}${env:HOMEPATH}\AppData\Local\wsl2_portproxy"
-$path = [Environment]::GetEnvironmentVariable("PATH", "User")
-$path += ";$dir"
-[Environment]::SetEnvironmentVariable("PATH", $path, "User")
+
+if(!(($env:PATH -split ";").contains("C:${env:HOMEPATH}\AppData\Local\wsl2_portproxy"))){
+    $path = [Environment]::GetEnvironmentVariable("PATH", "User")
+    $path += ";$dir"
+    [Environment]::SetEnvironmentVariable("PATH", $path, "User")
+}
 mkdir $dir\ -Force | Out-Null
-cp .\wsl2_portproxy.ps1 $dir\
+$pwd = Convert-Path .
+cp "${pwd}\wsl2_portproxy.ps1" "${dir}\"

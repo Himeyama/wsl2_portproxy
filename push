@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-rm wsl2_portproxy.zip
-zip -r wsl2_portproxy.zip install.ps1 wsl2_portproxy.ps1
-git add *
-date=`date`
-git commit -m "$date"
-git push
